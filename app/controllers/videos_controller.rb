@@ -92,6 +92,15 @@ class VideosController < ApplicationController
       redirect_to video_path(@video), :alert => "Whoaa... Something Went Wrong"
     end
   end
+
+  def rate
+     @video = Video.find(params[:id])
+     @video.rate(params[:stars], current_user)
+     respond_to do |format|
+       format.js
+     end
+   end
+
   private
   def increase_video_hits(video)
     puts "I'm here #{video.hits}"

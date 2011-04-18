@@ -19,7 +19,7 @@ class Person < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :encrypted_password, :password_confirmation, :remember_me
-
+  ajaxful_rater
   def increase_points
       self.points += 5
   end

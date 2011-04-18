@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
  #   @person.points = @points
  #   @person.save
  # end
+  def current_user
+    current_person
+  end
+
+  helper_method :current_user
 
  def authorize
     unless admin?

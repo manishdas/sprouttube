@@ -8,12 +8,17 @@ STube::Application.routes.draw do
   resources :people
 
   resources :videos do
+    member do
+      post 'rate'
+    end
+
     get 'likes'
     get 'dislikes'
     resources :reviews
   end
 
   resources :categories
+
 
   root :to => "home#index"
 

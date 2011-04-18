@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/edgarjs/ajaxful-rating.git
+  revision: 81b563ef4e4f7937b769ea64b589d990dc833b43
+  branch: rails3
+  specs:
+    ajaxful_rating (3.0.0.beta3)
+
+GIT
   remote: https://github.com/jnicklas/capybara.git
   revision: 97af9bd1c66fe54d1cb8c65b88518f1695331f5a
   specs:
@@ -41,7 +48,6 @@ GEM
       activesupport (= 3.0.5)
     activesupport (3.0.5)
     acts-as-taggable-on (2.0.6)
-    ajaxful_rating (2.2.8.2)
     alias (0.2.2)
     annotate (2.4.0)
     arel (2.0.9)
@@ -189,7 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  ajaxful_rating
+  ajaxful_rating!
   annotate
   capybara!
   cucumber-rails

@@ -24,7 +24,7 @@
     <h2>Most Active Users</h2> <hr />
     <% @most_active_users.each do |user| %>
         <div id = "most_active_user" >
-            <b><%= "#{user.name}" %></b>
+            <b><%= link_to("#{user.name}", person_path(user)) %></b>
             (<%= pluralize("#{user.points}", 'point') %>)
             <br />
         </div>

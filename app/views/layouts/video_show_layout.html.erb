@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>SproutTube</title>
-    <%= stylesheet_link_tag :all %>
+    <%= stylesheet_link_tag 'style', 'formtastic', 'formtastic_changes', 'video-js' %>
     <%= javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'application', 'video' %>
     <%= csrf_meta_tag %>
     <link rel="shortcut icon" href="favicon.ico" />
@@ -12,6 +12,7 @@
         // Add VideoJS to all video tags on the page when the DOM is ready
         VideoJS.setupAllWhenReady();
     </script>
+    <%= ajaxful_rating_style %>
 </head>
 <body>
     <div id="wrap">

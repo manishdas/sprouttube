@@ -36,9 +36,10 @@
 <div id= "video_description">
     <em><%= @video.description %></em>
 </div>
-<br />
+  <div id="video-callback"></div>
+  <%= ratings_for @video, current_person %>
 
-<h2><hr />Video Reviews</h2>
+  <h2>Video Reviews</h2>
 
 <div id="review_notice">
     <% if @reviews.count < 1 %>
