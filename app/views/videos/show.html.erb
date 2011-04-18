@@ -36,8 +36,9 @@
 <div id= "video_description">
     <em><%= @video.description %></em>
 </div>
-  <div id="video-callback"></div>
-  <%= ratings_for @video, current_person %>
+
+  Average: <%= ratings_for @video, :static %></br>
+  Your Rating: <%= ratings_for @video, current_person, :show_user_rating => true %>
 
   <h2>Video Reviews</h2>
 

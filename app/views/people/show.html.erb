@@ -1,3 +1,11 @@
-<h2><%= @person.name %></h2>
-<h2>Videos watched by <%= @person.name %> are </h2>
-<%= show_user%>
+<h2><%= @person.name %> Have <%= @person.points%> Points </h2>
+<h2>Videos Liked by <%= @person.name %> are </h2>
+<% @videos = show_user %>
+<% @videos.each do |videos| %>
+  <%= link_to("#{videos.title}", video_path(videos)) %><br \>
+<% end %>
+<h2><%= @person.name %> Reviewed on</h2>
+<% @videos = reviewed.uniq %>
+<% @videos.each do |videos| %>
+  <%= link_to("#{videos.title}", video_path(videos)) %><br \>
+<% end %>
