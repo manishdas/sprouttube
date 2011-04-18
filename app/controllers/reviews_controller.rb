@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @person = current_person
     @review = @video.reviews.new(params[:review])
     @review.person_id = @person.id
-    @person.increase_points(@review.content.length)
+    @person.increase_points
     if @review.save && @person.save
       redirect_to video_path(@video), :notice => "Great! You Just Made a Review"
     else
