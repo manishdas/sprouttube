@@ -3,7 +3,8 @@
             <% form.input :content %>
     <% end %>
     <%= form.buttons do %>
-            <%= form.commit_button %>
+            <%= form.commit_button :button_html => { :value => "Submit" } %>
     <% end %>
 <% end %>
-
+<p class = "text_value">200 characters left</p>
+<label for="checkbox">Minimum Characters met:</label><%= check_box_tag 'checkbox' %>
