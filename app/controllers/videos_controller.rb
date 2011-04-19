@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_filter :authorize, :except => [:index, :show, :likes, :dislikes]
+  before_filter :authenticate_person!, :except => [:index, :show, :likes, :dislikes]
 
   def index
     if params[:search]
@@ -55,6 +55,7 @@ class VideosController < ApplicationController
 
   def new
     @video = Video.new
+    @category = Category.new
   end
 
   def likes
@@ -87,6 +88,9 @@ class VideosController < ApplicationController
     end
 
     if @video.save
+      # respond_to do |format|
+      #          format.js
+      #        end
       redirect_to video_path(@video), :notice => "You Just Gave Thumbs Down To this Video"
     else
       redirect_to video_path(@video), :alert => "Whoaa... Something Went Wrong"

@@ -1,9 +1,9 @@
 <%= semantic_form_for @video do |form| %>
     <%= form.inputs do %>
             <%= form.input :title %>
-            <%= form.input :description %>
+            <%= form.input :description,  :input_html => { :class => 'autogrow', :rows => 10  }%>
             <%= form.input :category, :as => :select,  :collection => Category.select('distinct name').map { |c| c.name } %>
-            <%= form.input :tags %>
+            <a id = "button_add_category" href="#category_form">Add new</a>
             <%= form.input :path %>
         <% end %>
         <%= form.buttons do %>

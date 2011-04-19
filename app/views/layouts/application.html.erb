@@ -4,6 +4,8 @@
     <title>SproutTube</title>
     <%= stylesheet_link_tag :all %>
     <%= javascript_include_tag :defaults %>  <!-- 'jquery', 'jquery-ui', 'rails', 'application' -->
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
     <%= csrf_meta_tag %>
     <%= ajaxful_rating_style %>
     <link rel="shortcut icon" href="favicon.ico" />
@@ -30,7 +32,7 @@
                       <% end %>
                     </li>
                     <li>
-                    <% if admin? %>
+                    <% if person_signed_in? %>
                       <%= link_to "Add Video", new_video_path %>
                     <% end %>
                     </li>

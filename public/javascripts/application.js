@@ -38,20 +38,29 @@ $(function() {
     }
   });
 
+
+  $("#review_submit").attr('disabled', 'disabled');
+  $("#minimum_met").hide();
+
   $("#review_content").keyup(function () {
     if($("#review_content").val().length >= 200){
-      $("#review_submit").show();
+      $("#review_submit").removeAttr('disabled');
       $(".text_value").hide();
-      $("#checkbox").attr('checked',true);
+      $("#minimum_met").show();
     }
     else{
       $(".text_value").show();
       var length = $("#review_content").val().length;
       var remaining = 200 - length;
       $(".text_value").html(+remaining+" characters left");
-      $("#review_submit").hide();
-      $("#checkbox").attr('checked',false);
+      $("#review_submit").attr('disabled', 'disabled');
+      $("#minimum_met").hide();
+
     }
   });
+
+ // $('#button_add_category').bind("click",function (){
+    $("#button_add_category").fancybox();
+  //})
 
 });
