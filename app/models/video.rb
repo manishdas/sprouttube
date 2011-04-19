@@ -2,6 +2,8 @@ class Video < ActiveRecord::Base
 
   ajaxful_rateable :stars => 5
 
+  mount_uploader :path, VideoUploader
+
   has_many :reviews
   has_many :likes
   validates :category, :presence => true

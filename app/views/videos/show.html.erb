@@ -2,7 +2,7 @@
 <!-- Begin VideoJS -->
  <div class="video-js-box">
    <video id="show_video" class="video-js" width="750" controls="controls" preload="auto"  >
-     <source src='<%= "../resources/#{@video.category}/#{@video.path}.mp4" %>' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+     <source src='<%= "#{@video.path}" %>' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
    </video>
  </div>
  <!-- End VideoJS -->

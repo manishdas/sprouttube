@@ -1,12 +1,13 @@
 class VideosController < ApplicationController
   before_filter :authenticate_person!, :except => [:index, :show, :likes, :dislikes]
 
+
   def index
     if params[:search]
        @videos = Video.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"]).paginate :per_page => 3, :page => params[:page], :order => 'created_at DESC'
 
     else
-      @videos = Video.all.paginate :per_page => 3, :page => params[:page], :order => 'created_at DESC'
+      @videos = Video.all.paginate :per_page => 6, :page => params[:page], :order => 'created_at DESC'
     end
 
   end
@@ -47,6 +48,8 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(params[:video])
     if @video.save
+      current_person.points += 10
+      current_person.update_attributes(params[:person])
       redirect_to video_path(@video), :notice => "Video Submitted Successfully"
     else
       render :action => "new", :alert => "Video Submission Failed!!"
