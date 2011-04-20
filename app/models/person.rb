@@ -9,8 +9,8 @@ class Person < ActiveRecord::Base
   #  validates_uniqueness_of :email
   #  validates_presence_of :name
   #  validates_presence_of :email
-  validates :name, :presence => true,
-                   :uniqueness => true
+  # validates :name, :presence => true,
+  #                    :uniqueness => true
   validates :email, :presence => true,
                     :uniqueness => true
 
@@ -19,7 +19,7 @@ class Person < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :encrypted_password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :encrypted_password, :password_confirmation, :remember_me
   ajaxful_rater
   def increase_points
       self.points += 5

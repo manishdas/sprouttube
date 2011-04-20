@@ -196,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   acts-as-taggable-on
   ajaxful_rating!
   annotate

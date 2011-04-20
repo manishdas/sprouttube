@@ -47,12 +47,16 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(params[:video])
+    @people = Person.all
     if @video.save
       current_person.points += 10
       current_person.update_attributes(params[:person])
-      redirect_to video_path(@video), :notice => "Video Submitted Successfully"
+      @people.each do |person|
+        UserMailer.upload_email(person,@video).deliver
+      end
+      redirect_to video_path(@video), :notice => "Video Uploaded Successfully"
     else
-      render :action => "new", :alert => "Video Submission Failed!!"
+      render :action => "new", :alert => "Video Upload has been Failed!!"
     end
   end
 

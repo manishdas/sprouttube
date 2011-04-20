@@ -7,30 +7,10 @@
  </div>
  <!-- End VideoJS -->
 <h3>
-<div id = "response_count">
-    Response Count: <%= Video.find(@video.id).likes.count %>
-    <div id = "response_count_message" ></div>
-</div>
 
-<div id = "like_box">
-    <% if auth_review? %>
-        <% like_status = user_like_status(@video) %>
 
-        <% if like_status == "neutral" %>
-            <span id = "like"><%= link_to  image_tag("thumbs_up.png", :alt => "I Like This Video"), video_likes_path(@video), :title => "I Like This Video", :id => "like_link" %> </span>
-            <span id = "dislike"><%= link_to image_tag("thumbs_down.png", :alt => "I Dislike This Video"), video_dislikes_path(@video), :title => "I Dislike This Video", :class => "respond_link" %></span>
-        <% elsif like_status == "like" %>
-            <span id = "my_choice"><%= link_to  image_tag("thumbs_up.png", :alt => "I Like This Video"), video_likes_path(@video), :title => "I Like This Video", :class => "link" %> </span>
-            <span id="dislike"><%= link_to image_tag("thumbs_down.png", :alt => "I Dislike This Video"), video_dislikes_path(@video), :title => "I Dislike This Video", :class => "respond_link" %></span>
-        <% else %>
-            <span id = "like"><%= link_to  image_tag("thumbs_up.png", :alt => "I Like This Video"), video_likes_path(@video), :class => "respond_link", :title => "I Like This Video" %> </span>
-            <span id="my_choice"><%= link_to image_tag("thumbs_down.png", :alt => "I Dislike This Video"), video_dislikes_path(@video), :title => "I Dislike This Video", :class => "respond_link" %></span>
-        <% end %>
-    <% elsif %>
-        <span id = "noauth_like"><%= link_to  image_tag("thumbs_up.png", :alt => "I Like This Video"), new_person_session_path, :title => "I Like This Video", :class => "respond_link" %> </span>
-        <span id="noauth_dislike"><%= link_to image_tag("thumbs_down.png", :alt => "I Dislike This Video"), new_person_session_path, :title => "I Dislike This Video", :class => "respond_link" %></span>
-    <% end %>
-</div>
+
+
 
 </h3>
 <div id= "video_description">

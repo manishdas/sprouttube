@@ -15,6 +15,7 @@ gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => 'rails3'
 gem 'carrierwave'
+gem 'actionmailer'
 
 group :development, :test do
   gem 'rspec-rails'

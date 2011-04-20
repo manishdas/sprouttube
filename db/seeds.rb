@@ -17,30 +17,51 @@
     Category.find_or_create_by_name(attrb)
   end
 
- [
-  {:title => "Learning CSS Basic", :category => "CSS", :description => "In this video, you will learn the basic of using the @font-face rule and how to include new fonts into your web pages", :path => "css_typography_01" },
-  {:title => "Advanced CSS cource", :category => "CSS", :description => "In this video, you will learn more about using @font-face rule and including new fonts into your webpages", :path => "css_typography_02" },
-  {:title => "HTML5 on the Way", :category => "HTML5", :description => "In this video, we will learn how to use the input elements. Using input in combination with the type attribute, we can create a wide variety of different form elements", :path => "html5_inputforms" },
-  {:title => "Creating own Snippets", :category => "Miscellaneous", :description => "In this video, we explore how to create your own snippets to speed up your development", :path => "textmate_snippets" },
-  {:title => "Setting MYSQL database Server in PHP", :category => "PHP", :description => "Here we get the MYSQL database server, and PhpMyAdmin database manager setup. We also create a database for our project, as well as create, mySQL user for the application to use to connect to the database", :path => "php_mysql_databasesetup" },
-  {:title => "Calling YQL querries from PHP", :category => "PHP", :description => "YQL stands for Yahoo! Query Language. In this video we learn how to call YQL Queries from PHP pages.", :path => "php_yql" },
-  {:title => "Associatians in ActiveRecords", :category => "Rails", :description => "This video teaches us about defining associations between models in ActiveRecords. We begin by planning our relationships, and generating a new model. ", :path => "active_records" },
-  {:title => "Building web app using Sinatra", :category => "Ruby", :description => "Sinatra is awesome! We start building our first web application using Sinatra. We install the Sinatra Gem, create a simple web server, and learn about Ruby's Code Blocks. ", :path => "ruby_sinatra" },
-  {:title => "Exploring RubyGems", :category => "Ruby", :description => "RubyGems is the default package manager for Ruby and everyone is taking it as the de facto standards for Rails WebApp Development. It allows you to download, install and use third party libraries using simple command for extending feature of your App. ", :path => "rubygems" }
+  [
+  {:name => "PHP" },
   ].each do |attrb|
-    Video.find_or_create_by_path(attrb)
+    Video.find_or_create_by_name(attrb)
   end
 
   [
-    {:name => "admin", :email => "admin@sprout-tube.com", :password => "admingod" },
-    {:name => "Kapil", :email => "kapil@sprout-tube.com", :password => "password" },
-    {:name => "Prashiddha", :email => "prashiddha@sprout-tube.com", :password => "password" },
-    {:name => "Dipesh", :email => "dipesh@sprout-tube.com", :password => "password" },
-    {:name => "Chandra", :email => "chandra@sprout-tube.com", :password => "password" },
-    {:name => "Dipil", :email => "dipil@sprout-tube.com", :password => "password" },
-    {:name => "Abhaya", :email => "abhaya@sprout-tube.com", :password => "password" },
-    {:name => "Manish", :email => "manish@sprout-tube.com", :password => "password" },
-    {:name => "Prashvin", :email => "Prashvin@sprout-tube.com", :password => "password" }
+    {:name => "admin", :email => "bikash.basukala@sprout-technology.com", :password => "admingod" },
+    {:name => "Abhaya Thapa", :email => "abhaya.thapa@sprout-technology.com", :password => "password" },
+    {:name => "Alana Puskarich", :email => "alana@sprout-technology.com", :password => "password" },
+    {:name => "Anand Joseph", :email => "anand@sprout-technology.com", :password => "password" },
+    {:name => "Anu K.C.", :email => "annu.kc@sprout-technology.com", :password => "password" },
+    {:name => "Ashis Rai", :email => "ashis@sprout-technology.com", :password => "password" },
+    {:name => "Bala Bhadra Maharjan", :email => "bala@sprout-technology.com", :password => "password" },
+    {:name => "Bikash Basukala", :email => "bikash.basukala@sprout-technology.com", :password => "password" },
+    {:name => "Bikash Poudel", :email => "bikash@sprout-technology.com", :password => "password" },
+    {:name => "Chandra Mohan Thakur", :email => "chandra.thakur@sprout-technology.com", :password => "password" },
+    {:name => "Deepak Lamichhane", :email => "deepak@sprout-technology.com", :password => "password" },
+    {:name => "Dipesh Gautam", :email => "dipesh.gautam@sprout-technology.com", :password => "password" },
+    {:name => "Dipil Saud", :email => "dipil.saud@sprout-technology.com", :password => "password" },
+    {:name => "Gagan Shrestha", :email => "gagan@sprout-technology.com", :password => "password" },
+    {:name => "Jayandra Pokhrel", :email => "jayandra@sprout-technology.com", :password => "password" },
+    {:name => "Kapil Raj Nakhwa", :email => "kapil.nakhwa@sprout-technology.com", :password => "password" },
+    {:name => "Krisha Ram Shilpakar", :email => "Krishna@sprout-technology.com", :password => "password" },
+    {:name => "Kshitiz Jung Gurung", :email => "kshitiz.gurung@sprout-technology.com", :password => "password" },
+    {:name => "Lau Chin", :email => "lau@sprout-technology.com", :password => "password" },
+    {:name => "Laurel Sears", :email => "laurel@sprout-technology.com", :password => "password" },
+    {:name => "Manish Lal Das", :email => "manish.das@sprout-technology.com", :password => "password" },
+    {:name => "Mark Sears", :email => "mark@sprout-technology.com", :password => "password" },
+    {:name => "Prabesh Shrestha", :email => "prabesh.shrestha@sprout-technology.com", :password => "password" },
+    {:name => "Prashiddha Raj Joshi", :email => "prashiddha.joshi@sprout-technology.com", :password => "password" },
+    {:name => "Pratuat Amatya", :email => "pratuat.amatya@sprout-technology.com", :password => "password" },
+    {:name => "Prasvin Pandey", :email => "prasvin.pandey@sprout-technology.com", :password => "password" },
+    {:name => "Rajan Maharjan", :email => "rajan@sprout-technology.com", :password => "password" },
+    {:name => "Ranendra Adhikari", :email => "ranendra@sprout-technology.com", :password => "password" },
+    {:name => "Roshan Joshi", :email => "roshanj@sprout-technology.com", :password => "password" },
+    {:name => "Sachin Rai", :email => "sachin@sprout-technology.com", :password => "password" },
+    {:name => "Sadiksha Gautam", :email => "sadiksha@sprout-technology.com", :password => "password" },
+    {:name => "Safal Joshi", :email => "safal@sprout-technology.com", :password => "password" },
+    {:name => "Samesh Swongamikha", :email => "samesh@sprout-technology.com", :password => "password" },
+    {:name => "Sandeep Koirala", :email => "sandeep.koirala@sprout-technology.com", :password => "password" },
+    {:name => "Saroj Maharjan", :email => "saroj@sprout-technology.com", :password => "password" },
+    {:name => "Sarwagya Pandey", :email => "Sarwagya@sprout-technology.com", :password => "password" },
+    {:name => "Tom Puskarich", :email => "tom@sprout-technology.com", :password => "password" },
   ].each do |attrb|
     Person.find_or_create_by_name(attrb)
   end
+
