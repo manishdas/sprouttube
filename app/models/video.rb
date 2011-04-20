@@ -8,7 +8,6 @@ class Video < ActiveRecord::Base
   has_one :thumbnail
   belongs_to :person
   has_many :reviews
-  has_many :likes
   validates :category, :presence => true
   validates :path, :presence => true
 

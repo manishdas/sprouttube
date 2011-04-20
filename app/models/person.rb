@@ -2,7 +2,6 @@ class Person < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :reviews
-  has_many :likes
   has_many :videos
 
   # validates_uniqueness_of :name
@@ -19,7 +18,7 @@ class Person < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :encrypted_password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :encrypted_password, :password_confirmation, :remember_me,:name
   ajaxful_rater
   def increase_points
       self.points += 5

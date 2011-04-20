@@ -12,8 +12,7 @@ STube::Application.routes.draw do
       post 'rate'
     end
 
-    get 'likes'
-    get 'dislikes'
+
     resources :reviews
   end
 

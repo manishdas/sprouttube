@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_filter :authenticate_person!, :except => [:index, :show, :likes, :dislikes]
+  before_filter :authenticate_person!, :except => [:index, :show]
 
 
   def index
@@ -63,45 +63,6 @@ class VideosController < ApplicationController
   def new
     @video = Video.new
     @category = Category.new
-  end
-
-  def likes
-    @video = Video.find(params[:video_id])
-    p_id = current_person.id
-
-    @like = Like.find(:all, :conditions => [' person_id = ? AND video_id = ? ', p_id, params[:video_id] ])
-    if @like.count == 1
-      @like[0].update_attributes(:status => true)
-    else
-      Like.create(:person_id => p_id, :video_id => params[:video_id], :status => true )
-    end
-
-    if @video.save
-      redirect_to video_path(@video), :notice => "You Just Gave Thumbs Up To this Video"
-    else
-      redirect_to video_path(@video), :alert => "Whoaa... Something Went Wrong"
-    end
-  end
-
-  def dislikes
-    @video = Video.find(params[:video_id])
-    p_id = current_person.id
-
-    @like = Like.find(:all, :conditions => [' person_id = ? AND video_id = ? ', p_id, params[:video_id] ])
-    if @like.count == 1
-      @like[0].update_attributes(:status => false)
-    else
-      Like.create(:person_id => p_id, :video_id => params[:video_id], :status => false )
-    end
-
-    if @video.save
-      # respond_to do |format|
-      #          format.js
-      #        end
-      redirect_to video_path(@video), :notice => "You Just Gave Thumbs Down To this Video"
-    else
-      redirect_to video_path(@video), :alert => "Whoaa... Something Went Wrong"
-    end
   end
 
   def rate

@@ -10,18 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420044718) do
+ActiveRecord::Schema.define(:version => 20110420122542) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "likes", :force => true do |t|
-    t.integer  "video_id"
-    t.integer  "person_id"
-    t.boolean  "status",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,10 +71,8 @@ ActiveRecord::Schema.define(:version => 20110420044718) do
     t.text     "description"
     t.string   "path"
     t.integer  "hits",        :default => 0
-    t.integer  "likes",       :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "tags"
     t.integer  "person_id"
   end
 
