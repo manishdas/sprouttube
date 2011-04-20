@@ -1,9 +1,9 @@
 module PeopleHelper
   def show_user
     @videos = []
-    @person_likes = @person.likes
-    @person_likes.each do |like|
-      @videos << Video.find(like.video_id)
+    @person_rates = Rate.where("rater_id = #{@person.id}")
+    @person_rates.each do |r|
+      @videos << Video.find(r.rateable_id)
     end
     return @videos
   end

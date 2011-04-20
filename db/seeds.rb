@@ -19,12 +19,6 @@
   end
 
   [
-    {:name => "PHP" },
-  ].each do |attrb|
-    Video.find_or_create_by_name(attrb)
-  end
-
-  [
     {:name => "admin", :email => "bikash.basukala@sprout-technology.com", :password => "admingod" },
     {:name => "Abhaya Thapa", :email => "abhaya.thapa@sprout-technology.com", :password => "password" },
     {:name => "Alana Puskarich", :email => "alana@sprout-technology.com", :password => "password" },

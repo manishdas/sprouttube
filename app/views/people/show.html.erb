@@ -1,5 +1,5 @@
 <h2><%= @person.name %> Have <%= @person.points%> Points </h2>
-<h2>Videos Liked by <%= @person.name %> are </h2>
+<h2>Videos Rated by <%= @person.name %> are </h2>
 <% @videos = show_user %>
 <% @videos.each do |videos| %>
   <%= link_to("#{videos.title}", video_path(videos)) %><br \>
