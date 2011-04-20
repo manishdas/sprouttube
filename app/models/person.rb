@@ -3,6 +3,7 @@ class Person < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :reviews
   has_many :likes
+  has_many :videos
 
   # validates_uniqueness_of :name
   #  validates_uniqueness_of :email

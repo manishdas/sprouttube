@@ -3,7 +3,7 @@
 <% @videos.each do |video| %>
     <div class = "browse_all_video" > <br />
         <h3><%= video.title %> </h3>
-        <%= link_to image_tag("video_poster/#{video.category}.png", :alt => "#{video.title}", :width => 80), video_path(video), :title => "#{video.title}" %> <br />
+        <%= link_to image_tag("#{video.thumbnail.path}", :alt => "#{video.title}", :width => 80), video_path(video), :title => "#{video.title}" %> <br />
         <%= pluralize("#{video.hits}", 'view') %> &
         <%= pluralize("#{review_count(video)}", "review") %>
         <% if admin? %>

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Video do
-  it { should have_many :reviews }
+  it { should belong_to :person }
   it { should validate_presence_of(:path) }
   it { should validate_presence_of(:category) }
 end

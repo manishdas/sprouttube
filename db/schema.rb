@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110418071845) do
+ActiveRecord::Schema.define(:version => 20110420044718) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,13 @@ ActiveRecord::Schema.define(:version => 20110418071845) do
     t.datetime "updated_at"
   end
 
+  create_table "thumbnails", :force => true do |t|
+    t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "video_id"
+  end
+
   create_table "videos", :force => true do |t|
     t.string   "title"
     t.string   "category"
@@ -76,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20110418071845) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tags"
+    t.integer  "person_id"
   end
 
 end
