@@ -1,6 +1,6 @@
 <%= semantic_form_for ([@video, @review]) do |form| %>
     <%= form.inputs do %>
-            <% form.input :content %>
+            <% form.input :content, :input_html => { :class => 'autogrow', :rows => 5 } %>
     <% end %>
     <%= form.buttons do %>
             <%= form.commit_button :button_html => { :value => "Submit" } %>

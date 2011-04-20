@@ -6,13 +6,7 @@
    </video>
  </div>
  <!-- End VideoJS -->
-<h3>
 
-
-
-
-
-</h3>
 <div id= "video_description">
     <em><%= @video.description %></em>
 </div>
@@ -21,6 +15,18 @@
   Your Rating: <%= ratings_for @video, current_person, :show_user_rating => true %>
 
   <h2>Video Reviews</h2>
+
+<% @reviews.each do |review| %>
+    <div class="video_review">
+      <div class ="review_content">
+        <%= review.content %>
+      </div>
+      <div class = "user_name" >
+        By: <%= id2person("#{review.person_id}") %>,
+        <%= time_ago_in_words(review.created_at) %> ago
+      </div>
+    </div>
+<% end %>
 
 <div id="review_notice">
     <% if @reviews.count < 1 %>
@@ -34,11 +40,4 @@
         <%= link_to "Yes, I Want", person_session_path %>
     <% end %>
 </div>
-
-<% @reviews.each do |review| %>
-    <div class="video_review">
-    <%= review.content %> <br />
-    By:<%= id2person("#{review.person_id}") %> </br>
-    </div>
-<% end %>
 <hr />

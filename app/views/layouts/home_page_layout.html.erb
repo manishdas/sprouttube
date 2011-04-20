@@ -33,6 +33,9 @@
                     <li>
                     <% if person_signed_in? %>
                       <%= link_to "Upload Video", new_video_path %>
+                      <li>
+                      <%= link_to "Account Setting", edit_person_registration_path %>
+                      </li>
                     <% end %>
                     </li>
                     <li> <%= render "shared/link" %> </li>

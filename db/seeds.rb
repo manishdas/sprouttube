@@ -7,18 +7,19 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
   [
-  {:name => "PHP" },
-  {:name => "Rails" },
-  {:name => "Ruby" },
-  {:name => "CSS" },
-  {:name => "HTML5" },
-  {:name => "Miscellaneous" }
+    {:name => "PHP" },
+    {:name => "Rails" },
+    {:name => "Ruby" },
+    {:name => "CSS" },
+    {:name => "HTML5" },
+    {:name => "Mobile" },
+    {:name => "Miscellaneous" },
   ].each do |attrb|
     Category.find_or_create_by_name(attrb)
   end
 
   [
-  {:name => "PHP" },
+    {:name => "PHP" },
   ].each do |attrb|
     Video.find_or_create_by_name(attrb)
   end

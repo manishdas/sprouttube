@@ -4,7 +4,7 @@
     <%= form.input :person_id,:as => :hidden,:input_html => {  :value => current_person.id } %>
     <%= form.input :description,  :input_html => { :class => 'autogrow', :rows => 10  }%>
     <%= form.input :category, :as => :select,  :collection => Category.select('distinct name').map { |c| c.name } %>
-    <a id = "button_add_category" href="#category_form">Add new</a>
+    <a id = "button_add_category" href="#category_form">Add New Category</a>
     <%= form.input :path,:as =>:file%>
   <% end %>
   <%= form.buttons do %>
